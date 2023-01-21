@@ -1,11 +1,19 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:flutter/cupertino.dart';
+<<<<<<< HEAD
 import 'package:junior_project/core/constant/imageasset.dart';
 import 'package:junior_project/data/model/onboardingmodel.dart';
 import 'package:junior_project/data/model/templatemodel.dart';
 import 'package:junior_project/data/model/testingdatamodel.dart';
 import 'package:junior_project/data/model/welcomemodel.dart';
+=======
+import 'package:business_card/core/constant/imageasset.dart';
+import 'package:business_card/data/model/onboardingmodel.dart';
+import 'package:business_card/data/model/templatemodel.dart';
+import 'package:business_card/data/model/testingdatamodel.dart';
+import 'package:business_card/data/model/welcomemodel.dart';
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
 
 List<OnBoardingModel> onBoardingList = [
   OnBoardingModel(
@@ -35,14 +43,25 @@ WelcomeModel welcome = WelcomeModel(
 
 List<TemplateModel> templatelist = [
   TemplateModel(image: AppImageAsset.template0),
+<<<<<<< HEAD
   TemplateModel(image: AppImageAsset.template1),
   TemplateModel(image: AppImageAsset.template2),
   TemplateModel(image: AppImageAsset.template3),
+=======
+  TemplateModel(image: AppImageAsset.template0),
+  TemplateModel(image: AppImageAsset.template0),
+  TemplateModel(image: AppImageAsset.template0),
+  TemplateModel(image: AppImageAsset.template0)
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
 ];
 
 List<TestingDataModel> testingdatalist = [
   TestingDataModel(
+<<<<<<< HEAD
     templatenumber: 0,
+=======
+    templatenumber: 1,
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
     userid: 2,
     displayname: "MohammadYazbeck",
     jobtitle: "Software eng.",
@@ -58,9 +77,15 @@ List<TestingDataModel> testingdatalist = [
     profileimage: const AssetImage(AppImageAsset.profileimage),
   ),
   TestingDataModel(
+<<<<<<< HEAD
     templatenumber: 1,
     userid: 1,
     displayname: "Samer Hadad",
+=======
+    templatenumber: 2,
+    userid: 1,
+    displayname: "Samer",
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
     jobtitle: "Software eng.",
     about: "born in 27/8/1999, works for khara company",
     email: "mohamyazbec@gmail.com",
@@ -74,6 +99,7 @@ List<TestingDataModel> testingdatalist = [
     profileimage: const AssetImage(AppImageAsset.profileimage),
   ),
   TestingDataModel(
+<<<<<<< HEAD
     templatenumber: 2,
     userid: 3,
     displayname: "Liza Robretson",
@@ -221,6 +247,11 @@ List<TestingDataModel> testingdatalist = [
     templatenumber: 3,
     userid: 3,
     displayname: "Mohammad hassan",
+=======
+    templatenumber: 3,
+    userid: 3,
+    displayname: "waleed",
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
     jobtitle: "Software eng.",
     about: "born in 27/8/1999, works for khara company",
     email: "waleed@gmail.com",

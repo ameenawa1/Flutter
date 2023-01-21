@@ -2,6 +2,7 @@
 
 import 'dart:io';
 
+<<<<<<< HEAD
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:junior_project/controller/createcard_controller.dart';
@@ -17,6 +18,22 @@ import 'package:junior_project/view/widget/createcard/createcardtextfieldlink.da
 import 'package:junior_project/view/widget/createcard/createcardtextheader.dart';
 import 'package:junior_project/view/widget/createcard/createcardtitle.dart';
 import 'package:junior_project/view/widget/createcard/uploadimage.dart';
+=======
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:business_card/controller/createcard_controller.dart';
+import 'package:business_card/core/constant/color.dart';
+import 'package:business_card/core/constant/imageasset.dart';
+import 'package:business_card/core/functions/validinput.dart';
+import 'package:business_card/data/datasource/static/static.dart';
+import 'package:business_card/view/widget/createcard/createcardbottomsheet.dart';
+import 'package:business_card/view/widget/createcard/createcardbutton.dart';
+import 'package:business_card/view/widget/createcard/createcardtextfield.dart';
+import 'package:business_card/view/widget/createcard/createcardtextheader.dart';
+import 'package:business_card/view/widget/createcard/createcardtitle.dart';
+import 'package:business_card/view/widget/createcard/uploadimage.dart';
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
 
 class CreateCard extends StatelessWidget {
   const CreateCard({super.key});
@@ -24,6 +41,7 @@ class CreateCard extends StatelessWidget {
   Widget build(BuildContext context) {
     CreateCardContollerImp controller = Get.put(CreateCardContollerImp());
     return Scaffold(
+<<<<<<< HEAD
       appBar: PreferredSize(
           preferredSize: const Size.fromHeight(55.0), // here the desired height
           child: AppBar(
@@ -31,18 +49,36 @@ class CreateCard extends StatelessWidget {
             backgroundColor: AppColor.primaryColor,
             title: const CreateCardTextHeader(text: "Personal Card"),
           )),
+=======
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
       resizeToAvoidBottomInset: true,
       backgroundColor: AppColor.primaryColor,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+<<<<<<< HEAD
+=======
+          const SizedBox(
+            height: 40,
+          ),
+          const CreateCardTextHeader(
+            text: "My Card",
+          ),
+          const SizedBox(
+            height: 25,
+          ),
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
           Expanded(
             child: Container(
               decoration: BoxDecoration(
                   color: AppColor.white,
+<<<<<<< HEAD
                   borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(15),
                       topRight: Radius.circular(15))),
+=======
+                  borderRadius: BorderRadius.circular(15)),
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
               child: SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
                 // ignore: sized_box_for_whitespace
@@ -73,6 +109,7 @@ class CreateCard extends StatelessWidget {
                                         });
                                       });
                                 },
+<<<<<<< HEAD
                                 image: controller.image == null
                                     ? (controller.myServices.sharedPreferences
                                                 .getString("profileimage") ==
@@ -86,6 +123,14 @@ class CreateCard extends StatelessWidget {
                                             as String)))
                                     : FileImage(controller.image as File)
                                         as ImageProvider,
+=======
+                                image:controller.image!=null
+                ?FileImage(controller.image as File)
+                as ImageProvider
+                    : CachedNetworkImageProvider(controller.card?.profileImage ??"https://cdn-icons-png.flaticon.com/512/149/149071.png")
+
+
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
                               ),
                             ),
                             const SizedBox(
@@ -93,7 +138,11 @@ class CreateCard extends StatelessWidget {
                             ),
                             CreateCardTextField(
                                 valid: (val) {
+<<<<<<< HEAD
                                   return validInput(val!, 4, 15, "displayname");
+=======
+                                  return validInput(val!, 8, 30, "displayname");
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
                                 },
                                 mycontroller: controller.displayname,
                                 labeltext: "Display name",
@@ -107,7 +156,11 @@ class CreateCard extends StatelessWidget {
                                 icondata: Icons.work_outline_rounded),
                             CreateCardTextField(
                               valid: (val) {
+<<<<<<< HEAD
                                 return validInput(val!, 10, 350, "about");
+=======
+                                return validInput(val!, 10, 150, "about");
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
                               },
                               mycontroller: controller.about,
                               labeltext: "About",
@@ -152,43 +205,68 @@ class CreateCard extends StatelessWidget {
                         ]),
                         const CreateCardTitle(text: "Social Media Links"),
                         Column(children: [
+<<<<<<< HEAD
                           CreateCardTextFieldLink(
                             prefixtext: "https://",
                             valid: (val) {
                               return validInput(val!, 10, 40, "link");
+=======
+                          CreateCardTextField(
+                            valid: (val) {
+                              return validInput(val!, 10, 50, "link");
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
                             },
                             mycontroller: controller.facebook,
                             labeltext: "Facebook:",
                             icondata: Icons.link,
                           ),
+<<<<<<< HEAD
                           CreateCardTextFieldLink(
                             prefixtext: "https://",
                             valid: (val) {
                               return validInput(val!, 10, 40, "link");
+=======
+                          CreateCardTextField(
+                            valid: (val) {
+                              return validInput(val!, 10, 50, "link");
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
                             },
                             mycontroller: controller.instagram,
                             labeltext: "Instagram",
                             icondata: Icons.link,
                           ),
+<<<<<<< HEAD
                           CreateCardTextFieldLink(
                             prefixtext: "https://",
                             valid: (val) {
                               return validInput(val!, 10, 40, "link");
+=======
+                          CreateCardTextField(
+                            valid: (val) {
+                              return validInput(val!, 10, 50, "link");
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
                             },
                             mycontroller: controller.linkedin,
                             labeltext: "Linkedin",
                             icondata: Icons.link,
                           ),
+<<<<<<< HEAD
                           CreateCardTextFieldLink(
                             prefixtext: "https://",
                             valid: (val) {
                               return validInput(val!, 10, 40, "link");
+=======
+                          CreateCardTextField(
+                            valid: (val) {
+                              return validInput(val!, 10, 50, "link");
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
                             },
                             mycontroller: controller.github,
                             labeltext: "Github",
                             icondata: Icons.link,
                           ),
                         ]),
+<<<<<<< HEAD
                         const CreateCardTitle(text: "App Color"),
                         GetBuilder<CreateCardContollerImp>(
                           builder: (controller) => Row(
@@ -227,6 +305,8 @@ class CreateCard extends StatelessWidget {
                             ],
                           ),
                         ),
+=======
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
                         const SizedBox(
                           height: 30,
                         ),
@@ -238,16 +318,28 @@ class CreateCard extends StatelessWidget {
                             Get.defaultDialog(
                                 title: "Choose a template",
                                 titlePadding:
+<<<<<<< HEAD
                                     const EdgeInsets.only(top: 25, bottom: 10),
                                 titleStyle: TextStyle(
                                     fontSize: 24,
                                     color: AppColor.primaryColor,
                                     fontWeight: FontWeight.w500),
+=======
+                                    const EdgeInsets.only(top: 25, bottom: 20),
+                                titleStyle: TextStyle(
+                                    fontSize: 19,
+                                    color: AppColor.primaryColor,
+                                    fontWeight: FontWeight.w600),
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
                                 content: SizedBox(
                                   height: 400,
                                   width: 400,
                                   child: ListView.builder(
+<<<<<<< HEAD
                                       itemCount: 4,
+=======
+                                      itemCount: 5,
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
                                       scrollDirection: Axis.horizontal,
                                       itemBuilder: ((context, index) {
                                         return InkWell(
@@ -255,6 +347,7 @@ class CreateCard extends StatelessWidget {
                                             controller.updatetemplate(index);
                                           },
                                           child: Container(
+<<<<<<< HEAD
                                             decoration: BoxDecoration(
                                                 borderRadius:
                                                     BorderRadius.circular(25)),
@@ -262,13 +355,23 @@ class CreateCard extends StatelessWidget {
                                                 vertical: 10, horizontal: 10),
                                             height: 350,
                                             width: 260,
+=======
+                                            padding: const EdgeInsets.symmetric(
+                                                vertical: 20, horizontal: 10),
+                                            height: 400,
+                                            width: 200,
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
                                             child: Image.asset(
                                                 templatelist[index].image!),
                                           ),
                                         );
                                       })),
                                 ),
+<<<<<<< HEAD
                                 contentPadding: const EdgeInsets.all(10));
+=======
+                                contentPadding: const EdgeInsets.all(30));
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
                           },
                         ),
                         CreateCardButton(
@@ -276,7 +379,11 @@ class CreateCard extends StatelessWidget {
                             buttoncolor: AppColor.primaryColor,
                             text: "Save Information",
                             onPressed: () {
+<<<<<<< HEAD
                               controller.createcard();
+=======
+                              controller.createCard();
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
                             }),
                       ],
                     ),

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:junior_project/core/constant/color.dart';
+=======
+import 'package:business_card/core/constant/color.dart';
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
 
 class AuthTextField extends StatelessWidget {
   final String labeltext;
@@ -55,6 +59,11 @@ class AuthTextField extends StatelessWidget {
         TextFormField(
             validator: valid,
             obscureText: obscureText,
+<<<<<<< HEAD
+=======
+            controller:
+                mycontroller, //This is for getting the text from the feild
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
             decoration: InputDecoration(
               errorStyle: const TextStyle(fontSize: 11),
               contentPadding:

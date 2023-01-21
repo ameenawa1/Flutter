@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:get/get.dart';
+<<<<<<< HEAD
 import 'package:junior_project/core/constant/routes.dart';
 import 'package:junior_project/core/middleware/middleware.dart';
 import 'package:junior_project/view/screen/contactlist.dart';
@@ -22,6 +23,26 @@ import 'package:junior_project/view/screen/viewscannedcard2.dart';
 import 'package:junior_project/view/screen/viewscannedcard3.dart';
 import 'package:junior_project/view/screen/welcome.dart';
 import 'package:junior_project/view/screen/auth/signup.dart';
+=======
+import 'package:business_card/core/constant/routes.dart';
+import 'package:business_card/core/middleware/middleware.dart';
+import 'package:business_card/view/screen/auth/contactlist.dart';
+import 'package:business_card/view/screen/auth/forgetpassword/forgetpassword.dart';
+import 'package:business_card/view/screen/auth/login.dart';
+import 'package:business_card/view/screen/auth/forgetpassword/resetpassword.dart';
+import 'package:business_card/view/screen/auth/forgetpassword/succsess_resetpassword.dart';
+import 'package:business_card/view/screen/auth/succsess_signup.dart';
+import 'package:business_card/view/screen/auth/forgetpassword/verifycode.dart';
+import 'package:business_card/view/screen/auth/verifycodesignup.dart';
+import 'package:business_card/view/screen/createcard.dart';
+import 'package:business_card/view/screen/home.dart';
+import 'package:business_card/view/screen/onboarding.dart';
+import 'package:business_card/view/screen/profile.dart';
+import 'package:business_card/view/screen/scanqrcode.dart';
+import 'package:business_card/view/screen/viewscannedcard.dart';
+import 'package:business_card/view/screen/welcome.dart';
+import 'package:business_card/view/screen/auth/signup.dart';
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
 
 List<GetPage<dynamic>>? routes = [
   GetPage(name: "/", page: () => OnBoarding(), middlewares: [
@@ -32,7 +53,10 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.signup, page: () => SignupPage()),
   GetPage(name: AppRoute.createcard, page: () => CreateCard()),
   GetPage(name: AppRoute.profile, page: () => ProfilePage()),
+<<<<<<< HEAD
   GetPage(name: AppRoute.profile1, page: () => ProfilePage1()),
+=======
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
   GetPage(name: AppRoute.forgetpassword, page: () => ForgetPassword()),
   GetPage(name: AppRoute.verifycode, page: () => VerifyCode()),
   GetPage(name: AppRoute.resetpassword, page: () => ResetPassword()),
@@ -44,8 +68,11 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.contactlist, page: () => ContactList()),
   GetPage(name: AppRoute.home, page: () => HomePage()),
   GetPage(name: AppRoute.viewscannedcard, page: () => ViewScannedCard()),
+<<<<<<< HEAD
   GetPage(name: AppRoute.viewscannedcard1, page: () => ViewScannedCard1()),
   GetPage(name: AppRoute.viewscannedcard2, page: () => ViewScannedCard2()),
   GetPage(name: AppRoute.viewscannedcard3, page: () => ViewScannedCard3()),
+=======
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
   GetPage(name: AppRoute.scanqrcode, page: () => ScanQrCode()),
 ];

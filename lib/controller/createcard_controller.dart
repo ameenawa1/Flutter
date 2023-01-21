@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use, avoid_init_to_null, unused_local_variable, avoid_print
 // import 'package:flutter/services.dart' show rootBundle;
 // import 'package:path_provider/path_provider.dart';
+<<<<<<< HEAD
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
@@ -16,6 +17,27 @@ abstract class CreateCardContoller extends GetxController {
   uploadImageCamera();
   updatetemplate(int i);
   changeappcolor(int i);
+=======
+import 'dart:developer';
+import 'dart:io';
+import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:business_card/core/constant/color.dart';
+import 'package:business_card/core/constant/imageasset.dart';
+import 'package:business_card/core/constant/routes.dart';
+import 'package:business_card/core/services/services.dart';
+
+import '../core/models/card.dart';
+import '../core/repositries/back_end_repo.dart';
+
+abstract class CreateCardContoller extends GetxController {
+  createCard();
+  uploadImageGallery();
+  uploadImageCamera();
+  updatetemplate(int i);
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
 }
 
 class CreateCardContollerImp extends CreateCardContoller {
@@ -23,8 +45,12 @@ class CreateCardContollerImp extends CreateCardContoller {
   final imagepicker = ImagePicker();
   late String imagePath;
   late File? image = null;
+<<<<<<< HEAD
   int appcolor = 0;
 
+=======
+  Card? card = Get.arguments?['card'];
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
   MyServices myServices = Get.find();
 
   late int profileid;
@@ -48,6 +74,7 @@ class CreateCardContollerImp extends CreateCardContoller {
   late int templatenumber;
 
   @override
+<<<<<<< HEAD
   createcard() {
     var formdata = formstate.currentState;
     if (formdata!.validate()) {
@@ -57,6 +84,17 @@ class CreateCardContollerImp extends CreateCardContoller {
       } else {
         myServices.sharedPreferences.setString("profileimage", imagePath);
       }
+=======
+  createCard()async {
+    var formdata = formstate.currentState;
+    if (formdata!.validate()) {
+      // if (myServices.sharedPreferences.getString("profileimage") == null) {
+      //   myServices.sharedPreferences
+      //       .setString("profileimage", AppImageAsset.profileimage);
+      // } else {
+      //   myServices.sharedPreferences.setString("profileimage", imagePath);
+      // }
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
 
       myServices.sharedPreferences.setInt(
         "templatenumber",
@@ -108,9 +146,42 @@ class CreateCardContollerImp extends CreateCardContoller {
       );
 
       myServices.sharedPreferences.setInt("profileid", profileid);
+<<<<<<< HEAD
 
 // Check Template Number
       Get.offAllNamed(AppRoute.home);
+=======
+      try {
+        BackEndRepo backEndRepo = Get.find<BackEndRepo>();
+        log('k');
+        Card sendCard = Card(
+          name: displayname.text,
+          job: jobtitle.text,
+          profileImage:imagePath,
+          about: about.text,
+          address: address.text,
+          email:email.text,
+          phone1: phonenumber1.text,
+          phone2: phonenumber2.text,
+          facebook: facebook.text,
+          instgram: instagram.text,
+          linkedin: linkedin.text,
+          github: github.text,
+
+        );
+        if(card != null){
+          await backEndRepo.updateCard(sendCard);
+        }else{
+        await backEndRepo.createCard(sendCard);}
+        Get.offAllNamed(AppRoute.home);
+// Check Template Number
+      AppColor.changecolor();}
+        on DioError catch (e) {
+        if (e.response?.statusCode == 422) {
+          //show dialog Get.dialog()
+        }
+      }
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
     } else {
       printError(info: "Not Valid Input");
     }
@@ -142,8 +213,13 @@ class CreateCardContollerImp extends CreateCardContoller {
 
   @override
   void onInit() {
+<<<<<<< HEAD
     imagePath = myServices.sharedPreferences.getString("profileimage") ?? "";
     profileid = myServices.sharedPreferences.getInt("profileid") ?? 11;
+=======
+    imagePath = "";
+    profileid = myServices.sharedPreferences.getInt("profileid") ?? 0;
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
     templatenumber = myServices.sharedPreferences.getInt("templatenumber") ?? 0;
     displayname = TextEditingController(
         text: myServices.sharedPreferences.getString("displayname") ?? "");
@@ -179,6 +255,7 @@ class CreateCardContollerImp extends CreateCardContoller {
     printInfo(info: "Template $i Saved");
     Get.back(closeOverlays: true);
   }
+<<<<<<< HEAD
 
   @override
   changeappcolor(int i) {
@@ -187,6 +264,8 @@ class CreateCardContollerImp extends CreateCardContoller {
     AppColor.changecolor(appcolor);
     update();
   }
+=======
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
 }
 
 // Future<File> getImageFileFromAssets(String path) async {

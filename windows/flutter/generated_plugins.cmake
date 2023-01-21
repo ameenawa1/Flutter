@@ -3,7 +3,11 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+<<<<<<< HEAD
   connectivity_plus_windows
+=======
+  connectivity_plus
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
   url_launcher_windows
 )
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'dart:async';
 
 import 'package:get/get.dart';
@@ -24,10 +25,41 @@ class ContactListControllerImp extends ContactListController {
   StreamSubscription<NDEFMessage>? stream;
   MyServices myServices = Get.find();
 
+=======
+import 'dart:developer';
+
+import 'package:business_card/core/models/user.dart';
+import 'package:business_card/core/repositries/back_end_repo.dart';
+import 'package:get/get.dart';
+import 'package:business_card/core/constant/routes.dart';
+import 'package:business_card/core/services/services.dart';
+import 'package:path_provider/path_provider.dart';
+
+abstract class ContactListController extends GetxController {
+  removecard(int removeThisUserIdFromFriendList);
+  recivecardvianfc();
+  scanqrcode();
+  localPath();
+}
+
+class ContactListControllerImp extends ContactListController {
+  MyServices myServices = Get.find();
+  RxList<User> users = RxList<User>([]);
+  RxBool loading = RxBool(true);
+  BackEndRepo backEndRepo = Get.find<BackEndRepo>();
+  String? path;
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    loadCards();
+    super.onInit();
+  }
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
   @override
   removecard(int removeThisUserIdFromFriendList) {}
 
   @override
+<<<<<<< HEAD
   readcardvianfc() async {
     await NFC.isNDEFSupported.then((bool isSupported) {
       supportsNFC = isSupported;
@@ -67,6 +99,10 @@ class ContactListControllerImp extends ContactListController {
     } else {
       showError("Your Device does not support NFC Services");
     }
+=======
+  recivecardvianfc() {
+    Get.offAllNamed(AppRoute.viewscannedcard);
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
   }
 
   @override
@@ -79,9 +115,28 @@ class ContactListControllerImp extends ContactListController {
     final directory = await getApplicationDocumentsDirectory();
     path = directory.path;
   }
+<<<<<<< HEAD
 
   @override
   gotocontactlist() {
     Get.offAllNamed(AppRoute.contactlist);
+=======
+  loadCards()async{
+    var response = await backEndRepo.getContacts();
+    log(response.toString(),name: "llo");
+    var data = response['data'];
+    if(data.isNotEmpty){
+      List<User>? myUsers =
+
+      data!=null ?
+      List<User>.of(response?['data'].map<User>((res)=>User.fromJson(res)))
+          :[];
+      users(myUsers);
+
+    }
+
+    // log(users.first?.card?.name.toString() ??"l",name: "f");
+    loading(false);
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
   }
 }

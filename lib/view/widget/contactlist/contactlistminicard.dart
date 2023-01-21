@@ -1,9 +1,19 @@
+<<<<<<< HEAD
 import 'package:flutter/material.dart';
 import 'package:junior_project/core/constant/color.dart';
 import 'package:junior_project/view/widget/contactlist/contactlistbottmsheetoption.dart';
 
 class ContactListMiniCard extends StatelessWidget {
   final ImageProvider<Object> profileimage;
+=======
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
+import 'package:business_card/core/constant/color.dart';
+import 'package:business_card/view/widget/contactlist/contactlistbottmsheetoption.dart';
+
+class ContactListMiniCard extends StatelessWidget {
+  final String? profileimage;
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
   final String displayname;
   final String jobtitle;
   final String about;
@@ -84,7 +94,13 @@ class ContactListMiniCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             CircleAvatar(
+<<<<<<< HEAD
               backgroundImage: profileimage,
+=======
+              backgroundImage: CachedNetworkImageProvider(
+                  profileimage??""
+              ),
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
               radius: 35,
             ),
             Container(

@@ -13,7 +13,11 @@ class ProfileSocialMediaIcon extends StatelessWidget {
     return IconButton(
       onPressed: onPressed,
       icon: FaIcon(socialmediaicon),
+<<<<<<< HEAD
       iconSize: 44,
+=======
+      iconSize: 36,
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
       color: color,
     );
   }

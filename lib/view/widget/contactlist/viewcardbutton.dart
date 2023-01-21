@@ -16,7 +16,11 @@ class ViewCardButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+<<<<<<< HEAD
       margin: const EdgeInsets.only(top: 5, bottom: 10),
+=======
+      margin: const EdgeInsets.only(top: 20, bottom: 10),
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
       child: MaterialButton(
         height: 55,
         minWidth: double.infinity,

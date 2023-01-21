@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:junior_project/core/constant/color.dart';
+=======
+import 'package:business_card/core/constant/color.dart';
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
 
 class ProfileAboutMeSection extends StatelessWidget {
   final String text;
@@ -10,7 +14,11 @@ class ProfileAboutMeSection extends StatelessWidget {
     return Container(
         margin: const EdgeInsets.symmetric(horizontal: 20),
         decoration: BoxDecoration(
+<<<<<<< HEAD
             color: const Color.fromARGB(255, 239, 239, 239),
+=======
+            color: AppColor.textfieldprimary,
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
             borderRadius: BorderRadius.circular(15)),
         width: MediaQuery.of(context).size.width - 30,
         padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),

@@ -2,9 +2,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
+<<<<<<< HEAD
 import 'package:junior_project/controller/auth/verifycode_controller.dart';
 import 'package:junior_project/core/constant/color.dart';
 import 'package:junior_project/view/widget/auth/authtextheader.dart';
+=======
+import 'package:business_card/controller/auth/verifycode_controller.dart';
+import 'package:business_card/core/constant/color.dart';
+import 'package:business_card/view/widget/auth/authtextheader.dart';
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
 
 class VerifyCode extends StatelessWidget {
   @override
@@ -53,8 +59,16 @@ class VerifyCode extends StatelessWidget {
                     //handle validation or checks here
                   },
                   //runs when every textfield is filled
+<<<<<<< HEAD
                   onSubmit: (String verificationCode) {
                     controller.goToResetPassword();
+=======
+                  onSubmit: (String verificationCode) async {
+                    if (verificationCode.length == 5) {
+                      controller.code = verificationCode;
+                    }
+                    await controller.goToResetPassword();
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
                   }, // end onSubmit
                 ),
               ),

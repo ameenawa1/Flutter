@@ -2,8 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+<<<<<<< HEAD
 import 'package:junior_project/controller/sqanqrcode_controller.dart';
 import 'package:junior_project/core/constant/color.dart';
+=======
+import 'package:business_card/controller/sqanqrcode_controller.dart';
+import 'package:business_card/core/constant/color.dart';
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
 import 'package:mobile_scanner/mobile_scanner.dart';
 
 class ScanQrCode extends StatelessWidget {
@@ -15,6 +20,7 @@ class ScanQrCode extends StatelessWidget {
     return GetBuilder<ScanQrCodControllerImp>(
         builder: (controller) => Scaffold(
             appBar: AppBar(
+<<<<<<< HEAD
               leading: Container(
                   margin: const EdgeInsets.only(left: 15),
                   child: IconButton(
@@ -27,6 +33,8 @@ class ScanQrCode extends StatelessWidget {
                       controller.goback();
                     },
                   )),
+=======
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
               backgroundColor: AppColor.primaryColor,
               title: const Text("Mobile Scanner"),
               actions: [
@@ -70,9 +78,16 @@ class ScanQrCode extends StatelessWidget {
             body: MobileScanner(
                 allowDuplicates: true,
                 controller: controller.cameraController,
+<<<<<<< HEAD
                 onDetect: ((barcode, args) {
                   if (!controller.screenopend) {
                     controller.scannedIdByQR = barcode.rawValue ?? "---";
+=======
+                onDetect: ((barcode, args) async{
+                  if (!controller.screenopend) {
+                    controller.scannedIdByQR = barcode.rawValue ?? "---";
+                    await controller.getContact(barcode.rawValue);
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
                     printInfo(
                         info: 'Barcode found! ${controller.scannedIdByQR}');
                     controller.screenopend = true;

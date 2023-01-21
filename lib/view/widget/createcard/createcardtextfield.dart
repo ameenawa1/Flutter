@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:junior_project/core/constant/color.dart';
+=======
+import 'package:business_card/core/constant/color.dart';
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
 
 class CreateCardTextField extends StatelessWidget {
   final String labeltext;
@@ -8,6 +12,7 @@ class CreateCardTextField extends StatelessWidget {
   final String? Function(String?) valid;
   final bool isNumber;
 
+<<<<<<< HEAD
   const CreateCardTextField({
     super.key,
     required this.labeltext,
@@ -16,6 +21,15 @@ class CreateCardTextField extends StatelessWidget {
     required this.valid,
     this.isNumber = false,
   });
+=======
+  const CreateCardTextField(
+      {super.key,
+      required this.labeltext,
+      required this.mycontroller,
+      required this.icondata,
+      required this.valid,
+      this.isNumber = false});
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
 
   @override
   Widget build(BuildContext context) {

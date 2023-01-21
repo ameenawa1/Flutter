@@ -1,4 +1,5 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, avoid_print, deprecated_member_use
+<<<<<<< HEAD
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:junior_project/controller/auth/resetpassword_controller.dart';
@@ -8,6 +9,19 @@ import 'package:junior_project/core/functions/validinput.dart';
 import 'package:junior_project/view/widget/auth/authbutton.dart';
 import 'package:junior_project/view/widget/auth/authtextfield.dart';
 import 'package:junior_project/view/widget/auth/authtextheader.dart';
+=======
+import 'dart:developer';
+
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:business_card/controller/auth/resetpassword_controller.dart';
+// import 'package:get/get.dart';
+import 'package:business_card/core/constant/color.dart';
+import 'package:business_card/core/functions/validinput.dart';
+import 'package:business_card/view/widget/auth/authbutton.dart';
+import 'package:business_card/view/widget/auth/authtextfield.dart';
+import 'package:business_card/view/widget/auth/authtextheader.dart';
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
 
 class ResetPassword extends StatelessWidget {
   @override
@@ -85,8 +99,15 @@ class ResetPassword extends StatelessWidget {
                   ),
                   AuthButton(
                     text: "Reset",
+<<<<<<< HEAD
                     onPressed: () {
                       controller.goToSuccses();
+=======
+                    onPressed: () async {
+                      log(controller.email ?? "kk");
+                      await controller.resetpassword();
+                      // controller.goToSuccses();
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
                     },
                   ),
                   SizedBox(

@@ -1,12 +1,21 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, avoid_print, deprecated_member_use
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+<<<<<<< HEAD
 import 'package:junior_project/controller/auth/forgetpassword_controller.dart';
 import 'package:junior_project/core/constant/color.dart';
 import 'package:junior_project/core/functions/validinput.dart';
 import 'package:junior_project/view/widget/auth/authbutton.dart';
 import 'package:junior_project/view/widget/auth/authtextfield.dart';
 import 'package:junior_project/view/widget/auth/authtextheader.dart';
+=======
+import 'package:business_card/controller/auth/forgetpassword_controller.dart';
+import 'package:business_card/core/constant/color.dart';
+import 'package:business_card/core/functions/validinput.dart';
+import 'package:business_card/view/widget/auth/authbutton.dart';
+import 'package:business_card/view/widget/auth/authtextfield.dart';
+import 'package:business_card/view/widget/auth/authtextheader.dart';
+>>>>>>> 227f52eb858db42c592cb0ba02adba7f59af3b21
 
 class ForgetPassword extends StatelessWidget {
   @override
